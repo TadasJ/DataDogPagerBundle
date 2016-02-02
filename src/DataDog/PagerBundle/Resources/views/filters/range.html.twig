@@ -7,7 +7,7 @@
         id="{{ key }}_from"
         class="form-control input-sm"
         data-link="{{ filter_uri(pagination, key, "_search_pattern_") }}"
-        {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        {% if options.placeholder_from is defined %}placeholder="{{ options.placeholder_from }}"{% endif %}
         onkeyup="{{ keyUp }}(this, event)"
         onpaste="this.onchange();"
         oninput="this.onchange();"
@@ -21,7 +21,7 @@
         id="{{ key }}_to"
         class="form-control input-sm"
         data-link="{{ filter_uri(pagination, key, "_search_pattern_") }}"
-        {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+        {% if options.placeholder_to is defined %}placeholder="{{ options.placeholder_to }}"{% endif %}
         onkeyup="{{ keyUp }}(this, event)"
         onpaste="this.onchange();"
         oninput="this.onchange();"

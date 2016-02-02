@@ -94,9 +94,9 @@ class PaginationExtension extends \Twig_Extension
         return $twig->render('DataDogPagerBundle::filters/search.html.twig', compact('key', 'pagination', 'value', 'placeholder'));
     }
 
-    public function filterRange(\Twig_Environment $twig, Pagination $pagination, $key, $placeholder = '')
+    public function filterRange(\Twig_Environment $twig, Pagination $pagination, $key, array $options = [])
     {
-        return $twig->render('DataDogPagerBundle::filters/range.html.twig', compact('key', 'pagination', 'placeholder'));
+        return $twig->render('DataDogPagerBundle::filters/range.html.twig', compact('key', 'pagination', 'options'));
     }
 
     public function filterUri(Pagination $pagination, $key, $value)
