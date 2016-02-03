@@ -96,7 +96,15 @@ class PaginationExtension extends \Twig_Extension
 
     public function filterRange(\Twig_Environment $twig, Pagination $pagination, $key, array $options = [])
     {
-        return $twig->render('DataDogPagerBundle::filters/range.html.twig', compact('key', 'pagination', 'options'));
+        $unparsedValues = isset($pagination->query()['filters'][$key]) ? $pagination->query()['filters'][$key] : '';
+        $value_from = '';
+        $value_to = '';
+        if(!empty($unparsedValues)){
+            $separatedValues = explode('-', $unparsedValues);
+            $value_from = $separatedValues[0];
+            $value_to = $separatedValues[1];
+        }
+        return $twig->render('DataDogPagerBundle::filters/range.html.twig', compact('key', 'pagination', 'value_from', 'value_to', 'options'));
     }
 
     public function filterUri(Pagination $pagination, $key, $value)
