@@ -21,7 +21,7 @@
       <input type="text"
         id="{{ key }}_to"
         class="form-control input-sm"
-        vale="{{ value_to }}"
+        value="{{ value_to }}"
         data-link="{{ filter_uri(pagination, key, "_search_pattern_") }}"
         {% if options.placeholder_to is defined %}placeholder="{{ options.placeholder_to }}"{% endif %}
         onkeyup="{{ keyUp }}(this, event)"
